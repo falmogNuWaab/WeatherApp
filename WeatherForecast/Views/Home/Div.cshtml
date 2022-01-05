@@ -1,0 +1,28 @@
+﻿@model DetroitGrandRapidsWeather
+
+<div>
+    <h2>Detroit Forecast (7 day)</h2>
+    @foreach (Period dp in Model.Detroit.properties.periods)
+    {
+        <div style="border:1px solid black; display:inline-grid; width:150px;height:300px;">
+            <p style="font-weight:bolder"> @dp.name </p>
+            <p><img style="border-radius:10px" src="@dp.icon" /></p>
+            @dp.temperature&deg; @dp.temperatureUnit <br />
+            @dp.shortForecast
+        </div>
+    }
+</div>
+<div>
+    <h2>Grand Rapids Forecast (7 Day)</h2>
+    @foreach (Period grp in Model.GrandRapids.properties.periods)
+    {
+        <div style= "border:1px solid black; display:inline-grid; width:150px;height:300px;" >
+            <p style="font-weight:bolder">
+                @grp.name
+            </p>
+            <p><img style="border-radius:10px" src="@grp.icon" /></p>
+            @grp.temperature&deg; @grp.temperatureUnit<br />
+            @grp.shortForecast
+        </div>
+    }
+</div>
